@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Temperatura</class>
+ <widget class="QDialog" name="Temperatura">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>389</width>
+    <height>257</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Temperatura</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="recursos.qrc">
+    <normaloff>:/icono</normaloff>:/icono</iconset>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Centígrados</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLCDNumber" name="lcdCent">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(252, 233, 79);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDial" name="dialCent">
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="minimum">
+         <number>-18</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbdlCent">
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;</string>
+        </property>
+        <property name="text">
+         <string>Â°F</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Fahrenheit</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLCDNumber" name="lcdFahr">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(138, 226, 52);</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDial" name="dialFahr">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="maximum">
+         <number>210</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbdlFahr">
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;</string>
+        </property>
+        <property name="text">
+         <string>Â°F</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Kelvin</string>
+     </property>
+     <widget class="QDial" name="dialKelv">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>76</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="lcdKelvin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>23</y>
+        <width>100</width>
+        <height>47</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbdlKelvin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>182</y>
+        <width>100</width>
+        <height>47</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+text-decoration: underline;
+text-decoration: underline;</string>
+      </property>
+      <property name="text">
+       <string>Â°K</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>dialCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialKelv</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdKelvin</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
